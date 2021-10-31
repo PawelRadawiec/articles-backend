@@ -26,3 +26,5 @@ const articleSchema = new mongoose.Schema({
   },
   comments: [commentSchema],
 });
+
+mongoose.model('Article', articleSchema);

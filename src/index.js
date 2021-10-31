@@ -1,9 +1,11 @@
 require('./models/Article');
 const express = require('express');
 const mongoose = require('mongoose');
+const articlesRoutes = require('./routes/articleRoutes');
 
 const app = express();
 app.use(express.json());
+app.use(articlesRoutes);
 
 const mongodbUri = 'mongodb://127.0.0.1:27017/reactnative-course';
 mongoose.connect(mongodbUri);
