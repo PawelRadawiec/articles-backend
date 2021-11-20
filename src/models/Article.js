@@ -8,10 +8,10 @@ const commentSchema = new mongoose.Schema({
   content: {
     type: String,
     required: true,
-    rating: {
-      positive: Number,
-      negative: Number,
-    },
+  },
+  rating: {
+    positive: Number,
+    negative: Number,
   },
 });
 
@@ -23,6 +23,16 @@ const articleSchema = new mongoose.Schema({
   description: {
     type: String,
     required: true,
+  },
+  source: {
+    type: String,
+    required: true,
+  },
+  image: {
+    uri: {
+      type: String,
+      required: true,
+    },
   },
   comments: [commentSchema],
 });

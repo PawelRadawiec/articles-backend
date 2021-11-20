@@ -16,6 +16,20 @@ router.post('/article', async (req, res) => {
   res.send(article);
 });
 
+router.put('/article', (req, res) => {
+  Article.findByIdAndUpdate(
+    req.body._id,
+    req.body,
+    { new: true },
+    (err, article) => {
+      res.send(article);
+      if (err) {
+        console.log(err);
+      }
+    }
+  );
+});
+
 router.get('/articles', async (req, res) => {
   const articles = await Article.find();
   res.send(articles);
