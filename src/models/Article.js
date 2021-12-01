@@ -34,6 +34,10 @@ const articleSchema = new mongoose.Schema({
       required: true,
     },
   },
+  rating: {
+    positive: Number,
+    negative: Number,
+  },
   comments: [commentSchema],
 });
 

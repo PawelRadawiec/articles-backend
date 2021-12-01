@@ -30,6 +30,11 @@ router.put('/article', (req, res) => {
   );
 });
 
+router.get('/article/:id', async (req, res) => {
+  const article = await Article.findById(req.params.id);
+  res.send(article);
+});
+
 router.get('/articles', async (req, res) => {
   const articles = await Article.find();
   res.send(articles);
